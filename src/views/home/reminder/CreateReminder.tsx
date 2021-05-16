@@ -79,6 +79,7 @@ const CreateReminder: React.FC<Props> = function ({
 
   return (
     <Modal
+      getContainer={false}
       title="新增"
       visible={visible}
       onOk={handleSubmitForm}
@@ -93,8 +94,8 @@ const CreateReminder: React.FC<Props> = function ({
           rules={[
             {
               required: true,
-              message: "请选择时间"
-            }
+              message: '请选择时间',
+            },
           ]}
         >
           <DatePicker
@@ -111,19 +112,15 @@ const CreateReminder: React.FC<Props> = function ({
           rules={[
             {
               required: true,
-              message: "请输入提醒内容"
-            }
+              message: '请输入提醒内容',
+            },
           ]}
         >
-          <TextArea
-            rows={3}
-            maxLength={200}
-            placeholder="请输入"
-          />
+          <TextArea rows={3} maxLength={200} placeholder="请输入" />
         </Form.Item>
       </Form>
     </Modal>
-  )
+  );
 }
 
 export default React.memo(CreateReminder)

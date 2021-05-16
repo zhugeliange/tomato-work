@@ -88,6 +88,7 @@ const CreateCapitalFlowModal: React.FC<Props> = function ({
 
   return (
     <Modal
+      getContainer={false}
       title="新增"
       visible={visible}
       onOk={handleSubmit}
@@ -102,15 +103,11 @@ const CreateCapitalFlowModal: React.FC<Props> = function ({
           rules={[
             {
               required: true,
-              message: "请选择时间"
-            }
+              message: '请选择时间',
+            },
           ]}
         >
-          <DatePicker
-            showTime
-            allowClear={false}
-            className="w100"
-          />
+          <DatePicker showTime allowClear={false} className="w100" />
         </Form.Item>
 
         <Form.Item
@@ -119,16 +116,15 @@ const CreateCapitalFlowModal: React.FC<Props> = function ({
           rules={[
             {
               required: true,
-              message: "请选择类别"
-            }
+              message: '请选择类别',
+            },
           ]}
         >
-          <Select
-            showSearch
-            filterOption={filterOption}
-          >
+          <Select showSearch filterOption={filterOption}>
             {nameList.map((item: any) => (
-              <Option value={item.id} key={item.id}>{item.optionName}</Option>
+              <Option value={item.id} key={item.id}>
+                {item.optionName}
+              </Option>
             ))}
           </Select>
         </Form.Item>
@@ -139,25 +135,19 @@ const CreateCapitalFlowModal: React.FC<Props> = function ({
           rules={[
             {
               required: true,
-              message: "请输入金额"
-            }
+              message: '请输入金额',
+            },
           ]}
         >
           <Input placeholder="请输入金额" prefix="￥" />
         </Form.Item>
 
-        <Form.Item
-          label="备注信息"
-          name="remark"
-        >
-          <TextArea
-            rows={5}
-            maxLength={250}
-          />
+        <Form.Item label="备注信息" name="remark">
+          <TextArea rows={5} maxLength={250} />
         </Form.Item>
       </Form>
     </Modal>
-  )
+  );
 }
 
 export default React.memo(CreateCapitalFlowModal)

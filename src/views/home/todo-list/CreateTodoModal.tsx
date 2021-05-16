@@ -57,6 +57,7 @@ const CreateTodoModal: React.FC<Props> = function ({
 
   return (
     <Modal
+      getContainer={false}
       title="新增"
       visible={visible}
       onOk={handleSubmitForm}
@@ -72,21 +73,21 @@ const CreateTodoModal: React.FC<Props> = function ({
           rules={[
             {
               required: true,
-              message: "请输入内容"
-            }
+              message: '请输入内容',
+            },
           ]}
         >
           <TextArea
             rows={3}
             value={state.content}
-            onChange={e => setState({ content: e.target.value })}
+            onChange={(e) => setState({ content: e.target.value })}
             maxLength={250}
             placeholder="请输入内容"
           />
         </Form.Item>
       </Form>
     </Modal>
-  )
+  );
 }
 
 export default React.memo(CreateTodoModal)

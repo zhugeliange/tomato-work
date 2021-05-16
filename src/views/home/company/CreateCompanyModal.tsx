@@ -88,6 +88,7 @@ const CreateCompanyModal: React.FC<Props> = function ({
 
   return (
     <Modal
+      getContainer={false}
       title={title}
       visible={visible}
       onOk={handleSubmitForm}
@@ -103,14 +104,11 @@ const CreateCompanyModal: React.FC<Props> = function ({
           rules={[
             {
               required: true,
-              message: "请输入单位名称"
-            }
+              message: '请输入单位名称',
+            },
           ]}
         >
-          <Input
-            maxLength={200}
-            placeholder="请输入"
-          />
+          <Input maxLength={200} placeholder="请输入" />
         </Form.Item>
 
         <Form.Item
@@ -120,8 +118,8 @@ const CreateCompanyModal: React.FC<Props> = function ({
           rules={[
             {
               required: true,
-              message: "请选择日期"
-            }
+              message: '请选择日期',
+            },
           ]}
         >
           <DatePicker allowClear={false} className="w100" />
@@ -142,11 +140,16 @@ const CreateCompanyModal: React.FC<Props> = function ({
           rules={[
             {
               required: true,
-              message: "请输入薪资"
-            }
+              message: '请输入薪资',
+            },
           ]}
         >
-          <InputNumber min={1} max={99999999} className="w100" placeholder="请输入" />
+          <InputNumber
+            min={1}
+            max={99999999}
+            className="w100"
+            placeholder="请输入"
+          />
         </Form.Item>
 
         <Form.Item
@@ -154,15 +157,11 @@ const CreateCompanyModal: React.FC<Props> = function ({
           label="备注"
           initialValue={detail.remark ?? ''}
         >
-          <TextArea
-            rows={3}
-            maxLength={200}
-            placeholder="请输入"
-          />
+          <TextArea rows={3} maxLength={200} placeholder="请输入" />
         </Form.Item>
       </Form>
     </Modal>
-  )
+  );
 }
 
 export default React.memo(CreateCompanyModal)

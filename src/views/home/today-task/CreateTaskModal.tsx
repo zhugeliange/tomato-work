@@ -57,6 +57,7 @@ const CreateTaskModal: React.FC<Props> = function ({
 
   return (
     <Modal
+      getContainer={false}
       title="新增"
       visible={visible}
       onOk={handleSubmitForm}
@@ -71,8 +72,8 @@ const CreateTaskModal: React.FC<Props> = function ({
           rules={[
             {
               required: true,
-              message: "请选择日期"
-            }
+              message: '请选择日期',
+            },
           ]}
         >
           <DatePicker
@@ -88,15 +89,11 @@ const CreateTaskModal: React.FC<Props> = function ({
           rules={[
             {
               required: true,
-              message: "请输入内容"
-            }
+              message: '请输入内容',
+            },
           ]}
         >
-          <TextArea
-            rows={3}
-            maxLength={200}
-            placeholder="请输入内容"
-          />
+          <TextArea rows={3} maxLength={200} placeholder="请输入内容" />
         </Form.Item>
 
         <Form.Item
@@ -106,15 +103,15 @@ const CreateTaskModal: React.FC<Props> = function ({
           rules={[
             {
               required: true,
-              message: "请选择优先级"
-            }
+              message: '请选择优先级',
+            },
           ]}
         >
           <Rate />
         </Form.Item>
       </Form>
     </Modal>
-  )
+  );
 }
 
 export default React.memo(CreateTaskModal)

@@ -70,6 +70,7 @@ const CreateTypeModal: React.FC<Props> = function ({
 
   return (
     <Modal
+      getContainer={false}
       title="新增类别"
       visible={visible}
       onOk={handleSubmitForm}
@@ -84,14 +85,11 @@ const CreateTypeModal: React.FC<Props> = function ({
           rules={[
             {
               required: true,
-              message: "请输入类别名称"
-            }
+              message: '请输入类别名称',
+            },
           ]}
         >
-          <Input
-            maxLength={20}
-            placeholder="请输入类别名称"
-          />
+          <Input maxLength={20} placeholder="请输入类别名称" />
         </Form.Item>
 
         <Form.Item
@@ -100,22 +98,21 @@ const CreateTypeModal: React.FC<Props> = function ({
           rules={[
             {
               required: true,
-              message: "请选择类型"
-            }
+              message: '请选择类型',
+            },
           ]}
         >
-          <Select
-            showSearch
-            filterOption={filterOption}
-          >
-            {TYPES.map(item => (
-              <Option value={item.value} key={item.value}>{item.name}</Option>
+          <Select showSearch filterOption={filterOption}>
+            {TYPES.map((item) => (
+              <Option value={item.value} key={item.value}>
+                {item.name}
+              </Option>
             ))}
           </Select>
         </Form.Item>
       </Form>
     </Modal>
-  )
+  );
 }
 
 export default React.memo(CreateTypeModal)

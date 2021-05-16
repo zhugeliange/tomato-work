@@ -11,7 +11,7 @@ const CONFIG = {
   title: 'Tomato Work',
   http: {
     baseURL: isDevelopment
-      ? 'http://localhost:7003/api'
+      ? 'https://work-api.xiejiahe.com/api'
       : 'https://work-api.xiejiahe.com/api'
   },
   github: {

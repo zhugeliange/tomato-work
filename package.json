@@ -1,13 +1,13 @@
 {
   "name": "tomato-work",
   "version": "2.5.0",
-  "homepage": "https://github.com/xjh22222228/tomato-work",
+  "homepage": "https://github.com/zhugeliange/tomato-work",
   "bugs": {
-    "url": "https://github.com/xjh22222228/tomato-work/issues"
+    "url": "https://github.com/zhugeliange/tomato-work/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xjh22222228/tomato-work.git"
+    "url": "git+https://github.com/zhugeliange/tomato-work.git"
   },
   "scripts": {
     "dev": "vite",
